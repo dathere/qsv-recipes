@@ -1,3 +1,27 @@
+--[[
+Usage:
+1. Before running the recipe, make sure to enter the column index which contains the birthdate in the code.
+2. Use the following qsv command to calculate the age and add it as a new column named 'Age' in the CSV:
+   
+    qsv luau map 'Age' age.luau filename.csv -o newfile.csv
+    
+   - Replace 'age.luau' wisth the filename of this Lua script.
+   - Replace 'filename.csv' with the name of your input CSV file.
+   - The '-o' option is used to specify the output filename ('newfile.csv' in this example).
+
+3. When you have the file and the recipe in different file locations
+        
+        qsv luau map 'Age' file:<Path of this recipe> filename.csv -o newfile.csv
+    
+        When you need real-time preview of the csv file 
+
+        qsv luau map 'Age' age.luau filename.csv | qsv table
+Example:
+Suppose the input CSV file 'people.csv' contains a column 'Birthdate' which contains birthdates in the format 'dd-mm-yyyy'. To calculate the age based on these birthdates and add it as a new column named 'Age' in the CSV, use the following command:
+qsv luau map 'Age' age.luau people.csv -o people_with_age.csv
+]]
+
+
 BEGIN {
     -- Auto-index the CSV
     qsv_autoindex()
@@ -7,7 +31,7 @@ BEGIN {
 local current_date = os.date("*t")
 
 -- Extract the birthdate components
-local birthdate = col[1]
+local birthdate = col[1] --replace the index with the age column
 local birth_day, birth_month, birth_year = string.match(birthdate, "(%d+)-(%d+)-(%d+)")
 
 -- Convert birthdate components to numbers

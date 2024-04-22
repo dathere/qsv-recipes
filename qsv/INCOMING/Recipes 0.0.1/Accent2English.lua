@@ -1,3 +1,25 @@
+--[[
+Usage:
+1. Before running the recipe, make sure to enter the column index which contains the names with diacritic characters in the code.
+2. Use the following qsv command to replace diacritic characters with English characters and add them as a new column named 'Names' in the CSV:
+   
+    qsv luau map 'Names' diacritic_to_english.luau filename.csv -o newfile.csv
+    
+   - Replace 'diacritic_to_english.luau' with the filename of this Lua script.
+   - Replace 'filename.csv' with the name of your input CSV file.
+   - The '-o' option is used to specify the output filename ('newfile.csv' in this example).
+
+3. When you have the file and the recipe in different file locations
+        
+        qsv luau map 'Names' file:<Path of this recipe> filename.csv -o newfile.csv
+    
+        When you need real-time preview of the csv file 
+
+        qsv luau map 'Names' diacritic_to_english.luau filename.csv | qsv table
+Example:
+Suppose the input CSV file 'people.csv' contains a column 'Name' which contains names with diacritic characters. To replace these diacritic characters with English characters and add them as a new column named 'Names' in the CSV, use the following command:
+qsv luau map 'Names' diacritic_to_english.luau people.csv -o people_with_english_names.csv
+]]
 BEGIN {
     csv_indexed = qsv_autoindex();
 }!
