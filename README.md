@@ -1,14 +1,14 @@
 # qsv-recipes
 
-This repository contains recipes for qsv and qsv Pro.
+This repository contains recipes for qsv and qsv pro.
 
-The subfolders in this repository are organized by the type of recipe. For example, the `qsv` folder contains recipes for qsv, and the `qsv-pro` folder contains recipes for qsv Pro.
+The subfolders in this repository are organized by the type of recipe. For example, the `qsv` folder contains recipes for qsv, and the `qsv-pro` folder contains recipes for qsv pro.
 Subdirectories are organized by the version of the software. For example, the `qsv/1.0.0` folder contains the recipe for version 1.0.0 of qsv.
 Subdirectories under the version folders are organized by categories (e.g. Enrichment, Geocoding, Screening, etc.).
 
 ## Using qsv-recipes
 
-To use a recipe, you must have qsv or qsv Pro installed on your computer. You can download qsv from the [qsv website](https://qsv.dathere.com/). You can download qsv Pro from the [qsv Pro website](https://qsvpro.dathere.com).
+To use a recipe, you must have qsv or qsv pro installed on your computer. You can download qsv from the [qsv website](https://qsv.dathere.com/). You can download qsv pro from the [qsv pro website](https://qsvpro.dathere.com).
 
 ## Contributing to qsv-recipes
 
